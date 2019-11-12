@@ -9,4 +9,6 @@ void main(array<String^>^ args) {
 	Application::SetCompatibleTextRenderingDefault(false);
 	connectfour::connectFourGUI form;
 	Application::Run(% form);
+
+	Board ^ b = gcnew Board();
 }
