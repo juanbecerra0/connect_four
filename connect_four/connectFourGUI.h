@@ -117,6 +117,14 @@ namespace connectfour {
 	private: System::Windows::Forms::Button^ chip_02;
 
 	private: System::Windows::Forms::Button^ chip_01;
+private: System::Windows::Forms::Label^ nameLabel;
+private: System::Windows::Forms::RichTextBox^ gameConsole;
+
+
+private: System::Windows::Forms::Button^ newGameButton;
+
+
+
 
 
 
@@ -220,6 +228,9 @@ namespace connectfour {
 			this->chip_54 = (gcnew System::Windows::Forms::Button());
 			this->chip_55 = (gcnew System::Windows::Forms::Button());
 			this->chip_56 = (gcnew System::Windows::Forms::Button());
+			this->nameLabel = (gcnew System::Windows::Forms::Label());
+			this->gameConsole = (gcnew System::Windows::Forms::RichTextBox());
+			this->newGameButton = (gcnew System::Windows::Forms::Button());
 			this->grid_table->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -707,12 +718,48 @@ namespace connectfour {
 			this->chip_56->TabIndex = 41;
 			this->chip_56->UseVisualStyleBackColor = true;
 			// 
+			// nameLabel
+			// 
+			this->nameLabel->AutoSize = true;
+			this->nameLabel->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->nameLabel->Location = System::Drawing::Point(12, 666);
+			this->nameLabel->Name = L"nameLabel";
+			this->nameLabel->Size = System::Drawing::Size(278, 13);
+			this->nameLabel->TabIndex = 1;
+			this->nameLabel->Text = L"Created by Juan Becerra (juanbecerra@u.boisestate.edu)";
+			this->nameLabel->Click += gcnew System::EventHandler(this, &connectFourGUI::label1_Click);
+			// 
+			// gameConsole
+			// 
+			this->gameConsole->Cursor = System::Windows::Forms::Cursors::Default;
+			this->gameConsole->Location = System::Drawing::Point(15, 531);
+			this->gameConsole->Name = L"gameConsole";
+			this->gameConsole->ReadOnly = true;
+			this->gameConsole->ScrollBars = System::Windows::Forms::RichTextBoxScrollBars::ForcedVertical;
+			this->gameConsole->Size = System::Drawing::Size(576, 132);
+			this->gameConsole->TabIndex = 2;
+			this->gameConsole->Text = L"";
+			// 
+			// newGameButton
+			// 
+			this->newGameButton->BackColor = System::Drawing::SystemColors::MenuHighlight;
+			this->newGameButton->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->newGameButton->Location = System::Drawing::Point(597, 531);
+			this->newGameButton->Name = L"newGameButton";
+			this->newGameButton->Size = System::Drawing::Size(91, 40);
+			this->newGameButton->TabIndex = 3;
+			this->newGameButton->Text = L"New Game";
+			this->newGameButton->UseVisualStyleBackColor = false;
+			// 
 			// connectFourGUI
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ControlDarkDark;
 			this->ClientSize = System::Drawing::Size(704, 681);
+			this->Controls->Add(this->newGameButton);
+			this->Controls->Add(this->gameConsole);
+			this->Controls->Add(this->nameLabel);
 			this->Controls->Add(this->grid_table);
 			this->MaximizeBox = false;
 			this->MinimizeBox = false;
@@ -722,10 +769,13 @@ namespace connectfour {
 			this->Load += gcnew System::EventHandler(this, &connectFourGUI::connectFourGUI_Load);
 			this->grid_table->ResumeLayout(false);
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
 	private: System::Void connectFourGUI_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
-	};
+	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }
