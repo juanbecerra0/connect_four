@@ -722,11 +722,11 @@ private: System::Windows::Forms::Button^ newGameButton;
 			// 
 			this->nameLabel->AutoSize = true;
 			this->nameLabel->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->nameLabel->Location = System::Drawing::Point(12, 666);
+			this->nameLabel->Location = System::Drawing::Point(206, 666);
 			this->nameLabel->Name = L"nameLabel";
-			this->nameLabel->Size = System::Drawing::Size(278, 13);
+			this->nameLabel->Size = System::Drawing::Size(284, 13);
 			this->nameLabel->TabIndex = 1;
-			this->nameLabel->Text = L"Created by Juan Becerra (juanbecerra@u.boisestate.edu)";
+			this->nameLabel->Text = L"  Created by Juan Becerra (juanbecerra@u.boisestate.edu)";
 			this->nameLabel->Click += gcnew System::EventHandler(this, &connectFourGUI::label1_Click);
 			// 
 			// gameConsole
