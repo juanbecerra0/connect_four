@@ -36,96 +36,73 @@ namespace connectfour {
 				delete components;
 			}
 		}
+	// Table for buttons
 	private: System::Windows::Forms::TableLayoutPanel^ grid_table;
-	private: System::Windows::Forms::Button^ chip_00;
+
+	// Row 6
 	private: System::Windows::Forms::Button^ chip_56;
-
 	private: System::Windows::Forms::Button^ chip_55;
-
 	private: System::Windows::Forms::Button^ chip_54;
-
 	private: System::Windows::Forms::Button^ chip_53;
-
 	private: System::Windows::Forms::Button^ chip_52;
-
 	private: System::Windows::Forms::Button^ chip_51;
-
 	private: System::Windows::Forms::Button^ chip_50;
 
+	// Row 4
 	private: System::Windows::Forms::Button^ chip_46;
-
 	private: System::Windows::Forms::Button^ chip_45;
-
 	private: System::Windows::Forms::Button^ chip_44;
-
 	private: System::Windows::Forms::Button^ chip_43;
-
 	private: System::Windows::Forms::Button^ chip_42;
-
 	private: System::Windows::Forms::Button^ chip_41;
-
 	private: System::Windows::Forms::Button^ chip_40;
 
+	// Row 3
 	private: System::Windows::Forms::Button^ chip_36;
-
 	private: System::Windows::Forms::Button^ chip_35;
-
 	private: System::Windows::Forms::Button^ chip_34;
-
 	private: System::Windows::Forms::Button^ chip_33;
-
 	private: System::Windows::Forms::Button^ chip_32;
-
 	private: System::Windows::Forms::Button^ chip_31;
-
 	private: System::Windows::Forms::Button^ chip_30;
 
+	// Row 2
 	private: System::Windows::Forms::Button^ chip_26;
-
 	private: System::Windows::Forms::Button^ chip_25;
-
 	private: System::Windows::Forms::Button^ chip_24;
-
 	private: System::Windows::Forms::Button^ chip_23;
-
 	private: System::Windows::Forms::Button^ chip_22;
-
 	private: System::Windows::Forms::Button^ chip_21;
-
 	private: System::Windows::Forms::Button^ chip_20;
 
+	// Row 1
 	private: System::Windows::Forms::Button^ chip_16;
-
 	private: System::Windows::Forms::Button^ chip_15;
-
 	private: System::Windows::Forms::Button^ chip_14;
-
 	private: System::Windows::Forms::Button^ chip_13;
-
 	private: System::Windows::Forms::Button^ chip_12;
-
 	private: System::Windows::Forms::Button^ chip_11;
-
 	private: System::Windows::Forms::Button^ chip_10;
 
+	// Row 0
 	private: System::Windows::Forms::Button^ chip_06;
-
 	private: System::Windows::Forms::Button^ chip_05;
-
 	private: System::Windows::Forms::Button^ chip_04;
-
 	private: System::Windows::Forms::Button^ chip_03;
-
 	private: System::Windows::Forms::Button^ chip_02;
-
 	private: System::Windows::Forms::Button^ chip_01;
-private: System::Windows::Forms::Label^ nameLabel;
-private: System::Windows::Forms::RichTextBox^ gameConsole;
+	private: System::Windows::Forms::Button^ chip_00;
 
+	// "Created by" label
+	private: System::Windows::Forms::Label^ nameLabel;
 
-private: System::Windows::Forms::Button^ newGameButton;
-private: System::Windows::Forms::Button^ exitButton;
-private: System::Windows::Forms::CheckBox^ debugCheckbox;
+	// Console
+	private: System::Windows::Forms::RichTextBox^ gameConsole;
+
+	// Buttons
+	private: System::Windows::Forms::Button^ newGameButton;
+	private: System::Windows::Forms::Button^ exitButton;
+	private: System::Windows::Forms::CheckBox^ debugCheckbox;
 
 
 
