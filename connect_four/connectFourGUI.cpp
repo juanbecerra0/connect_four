@@ -9,6 +9,5 @@ void main() {
 	Application::SetCompatibleTextRenderingDefault(false);
 	connectfour::connectFourGUI form;
 	Application::Run(% form);
-
-	Board ^ b = gcnew Board();
+	form.WriteToConsole();
 }

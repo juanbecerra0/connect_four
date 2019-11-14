@@ -1,7 +1,6 @@
 #pragma once
 
 #include "connectFourGUI.h"
-
 #include <iostream>
 
 using namespace std;

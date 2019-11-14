@@ -1,6 +1,8 @@
 #pragma once
 
 #include "Board.h"
+#include <string>
+using namespace std;
 
 namespace connectfour {
 
@@ -20,9 +22,7 @@ namespace connectfour {
 		connectFourGUI(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
+			//Board^ b = gcnew Board();
 		}
 
 	protected:
@@ -99,57 +99,14 @@ namespace connectfour {
 	// Console
 	private: System::Windows::Forms::RichTextBox^ gameConsole;
 
+	public: void WriteToConsole() {
+		this->gameConsole->Text = L"Fuck";
+	}
+
 	// Buttons
 	private: System::Windows::Forms::Button^ newGameButton;
 	private: System::Windows::Forms::Button^ exitButton;
 	private: System::Windows::Forms::CheckBox^ debugCheckbox;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	protected:
 
@@ -270,7 +227,8 @@ namespace connectfour {
 			this->grid_table->Controls->Add(this->chip_02, 2, 0);
 			this->grid_table->Controls->Add(this->chip_01, 1, 0);
 			this->grid_table->Controls->Add(this->chip_00, 0, 0);
-			this->grid_table->Location = System::Drawing::Point(12, 12);
+			this->grid_table->Location = System::Drawing::Point(16, 15);
+			this->grid_table->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->grid_table->Name = L"grid_table";
 			this->grid_table->RowCount = 6;
 			this->grid_table->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 16.66667F)));
@@ -279,16 +237,17 @@ namespace connectfour {
 			this->grid_table->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 16.66667F)));
 			this->grid_table->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 16.66667F)));
 			this->grid_table->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 16.66667F)));
-			this->grid_table->Size = System::Drawing::Size(680, 512);
+			this->grid_table->Size = System::Drawing::Size(907, 630);
 			this->grid_table->TabIndex = 0;
 			// 
 			// chip_56
 			// 
 			this->chip_56->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_56->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_56.Image")));
-			this->chip_56->Location = System::Drawing::Point(585, 428);
+			this->chip_56->Location = System::Drawing::Point(778, 524);
+			this->chip_56->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_56->Name = L"chip_56";
-			this->chip_56->Size = System::Drawing::Size(91, 79);
+			this->chip_56->Size = System::Drawing::Size(121, 97);
 			this->chip_56->TabIndex = 41;
 			this->chip_56->UseVisualStyleBackColor = true;
 			// 
@@ -296,9 +255,10 @@ namespace connectfour {
 			// 
 			this->chip_55->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_55->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_55.Image")));
-			this->chip_55->Location = System::Drawing::Point(488, 428);
+			this->chip_55->Location = System::Drawing::Point(649, 524);
+			this->chip_55->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_55->Name = L"chip_55";
-			this->chip_55->Size = System::Drawing::Size(91, 79);
+			this->chip_55->Size = System::Drawing::Size(121, 97);
 			this->chip_55->TabIndex = 40;
 			this->chip_55->UseVisualStyleBackColor = true;
 			// 
@@ -306,9 +266,10 @@ namespace connectfour {
 			// 
 			this->chip_54->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_54->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_54.Image")));
-			this->chip_54->Location = System::Drawing::Point(391, 428);
+			this->chip_54->Location = System::Drawing::Point(520, 524);
+			this->chip_54->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_54->Name = L"chip_54";
-			this->chip_54->Size = System::Drawing::Size(91, 79);
+			this->chip_54->Size = System::Drawing::Size(121, 97);
 			this->chip_54->TabIndex = 39;
 			this->chip_54->UseVisualStyleBackColor = true;
 			// 
@@ -316,9 +277,10 @@ namespace connectfour {
 			// 
 			this->chip_53->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_53->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_53.Image")));
-			this->chip_53->Location = System::Drawing::Point(294, 428);
+			this->chip_53->Location = System::Drawing::Point(391, 524);
+			this->chip_53->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_53->Name = L"chip_53";
-			this->chip_53->Size = System::Drawing::Size(91, 79);
+			this->chip_53->Size = System::Drawing::Size(121, 97);
 			this->chip_53->TabIndex = 38;
 			this->chip_53->UseVisualStyleBackColor = true;
 			// 
@@ -326,9 +288,10 @@ namespace connectfour {
 			// 
 			this->chip_52->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_52->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_52.Image")));
-			this->chip_52->Location = System::Drawing::Point(197, 428);
+			this->chip_52->Location = System::Drawing::Point(262, 524);
+			this->chip_52->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_52->Name = L"chip_52";
-			this->chip_52->Size = System::Drawing::Size(91, 79);
+			this->chip_52->Size = System::Drawing::Size(121, 97);
 			this->chip_52->TabIndex = 37;
 			this->chip_52->UseVisualStyleBackColor = true;
 			// 
@@ -336,9 +299,10 @@ namespace connectfour {
 			// 
 			this->chip_51->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_51->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_51.Image")));
-			this->chip_51->Location = System::Drawing::Point(100, 428);
+			this->chip_51->Location = System::Drawing::Point(133, 524);
+			this->chip_51->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_51->Name = L"chip_51";
-			this->chip_51->Size = System::Drawing::Size(91, 79);
+			this->chip_51->Size = System::Drawing::Size(121, 97);
 			this->chip_51->TabIndex = 36;
 			this->chip_51->UseVisualStyleBackColor = true;
 			// 
@@ -346,9 +310,10 @@ namespace connectfour {
 			// 
 			this->chip_50->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_50->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_50.Image")));
-			this->chip_50->Location = System::Drawing::Point(3, 428);
+			this->chip_50->Location = System::Drawing::Point(4, 524);
+			this->chip_50->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_50->Name = L"chip_50";
-			this->chip_50->Size = System::Drawing::Size(91, 79);
+			this->chip_50->Size = System::Drawing::Size(121, 97);
 			this->chip_50->TabIndex = 35;
 			this->chip_50->UseVisualStyleBackColor = true;
 			// 
@@ -356,9 +321,10 @@ namespace connectfour {
 			// 
 			this->chip_46->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_46->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_46.Image")));
-			this->chip_46->Location = System::Drawing::Point(585, 343);
+			this->chip_46->Location = System::Drawing::Point(778, 420);
+			this->chip_46->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_46->Name = L"chip_46";
-			this->chip_46->Size = System::Drawing::Size(91, 79);
+			this->chip_46->Size = System::Drawing::Size(121, 96);
 			this->chip_46->TabIndex = 34;
 			this->chip_46->UseVisualStyleBackColor = true;
 			// 
@@ -366,9 +332,10 @@ namespace connectfour {
 			// 
 			this->chip_45->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_45->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_45.Image")));
-			this->chip_45->Location = System::Drawing::Point(488, 343);
+			this->chip_45->Location = System::Drawing::Point(649, 420);
+			this->chip_45->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_45->Name = L"chip_45";
-			this->chip_45->Size = System::Drawing::Size(91, 79);
+			this->chip_45->Size = System::Drawing::Size(121, 96);
 			this->chip_45->TabIndex = 33;
 			this->chip_45->UseVisualStyleBackColor = true;
 			// 
@@ -376,9 +343,10 @@ namespace connectfour {
 			// 
 			this->chip_44->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_44->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_44.Image")));
-			this->chip_44->Location = System::Drawing::Point(391, 343);
+			this->chip_44->Location = System::Drawing::Point(520, 420);
+			this->chip_44->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_44->Name = L"chip_44";
-			this->chip_44->Size = System::Drawing::Size(91, 79);
+			this->chip_44->Size = System::Drawing::Size(121, 96);
 			this->chip_44->TabIndex = 32;
 			this->chip_44->UseVisualStyleBackColor = true;
 			// 
@@ -386,9 +354,10 @@ namespace connectfour {
 			// 
 			this->chip_43->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_43->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_43.Image")));
-			this->chip_43->Location = System::Drawing::Point(294, 343);
+			this->chip_43->Location = System::Drawing::Point(391, 420);
+			this->chip_43->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_43->Name = L"chip_43";
-			this->chip_43->Size = System::Drawing::Size(91, 79);
+			this->chip_43->Size = System::Drawing::Size(121, 96);
 			this->chip_43->TabIndex = 31;
 			this->chip_43->UseVisualStyleBackColor = true;
 			// 
@@ -396,9 +365,10 @@ namespace connectfour {
 			// 
 			this->chip_42->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_42->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_42.Image")));
-			this->chip_42->Location = System::Drawing::Point(197, 343);
+			this->chip_42->Location = System::Drawing::Point(262, 420);
+			this->chip_42->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_42->Name = L"chip_42";
-			this->chip_42->Size = System::Drawing::Size(91, 79);
+			this->chip_42->Size = System::Drawing::Size(121, 96);
 			this->chip_42->TabIndex = 30;
 			this->chip_42->UseVisualStyleBackColor = true;
 			// 
@@ -406,9 +376,10 @@ namespace connectfour {
 			// 
 			this->chip_41->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_41->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_41.Image")));
-			this->chip_41->Location = System::Drawing::Point(100, 343);
+			this->chip_41->Location = System::Drawing::Point(133, 420);
+			this->chip_41->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_41->Name = L"chip_41";
-			this->chip_41->Size = System::Drawing::Size(91, 79);
+			this->chip_41->Size = System::Drawing::Size(121, 96);
 			this->chip_41->TabIndex = 29;
 			this->chip_41->UseVisualStyleBackColor = true;
 			// 
@@ -416,9 +387,10 @@ namespace connectfour {
 			// 
 			this->chip_40->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_40->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_40.Image")));
-			this->chip_40->Location = System::Drawing::Point(3, 343);
+			this->chip_40->Location = System::Drawing::Point(4, 420);
+			this->chip_40->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_40->Name = L"chip_40";
-			this->chip_40->Size = System::Drawing::Size(91, 79);
+			this->chip_40->Size = System::Drawing::Size(121, 96);
 			this->chip_40->TabIndex = 28;
 			this->chip_40->UseVisualStyleBackColor = true;
 			// 
@@ -426,9 +398,10 @@ namespace connectfour {
 			// 
 			this->chip_36->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_36->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_36.Image")));
-			this->chip_36->Location = System::Drawing::Point(585, 258);
+			this->chip_36->Location = System::Drawing::Point(778, 316);
+			this->chip_36->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_36->Name = L"chip_36";
-			this->chip_36->Size = System::Drawing::Size(91, 79);
+			this->chip_36->Size = System::Drawing::Size(121, 96);
 			this->chip_36->TabIndex = 27;
 			this->chip_36->UseVisualStyleBackColor = true;
 			// 
@@ -436,9 +409,10 @@ namespace connectfour {
 			// 
 			this->chip_35->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_35->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_35.Image")));
-			this->chip_35->Location = System::Drawing::Point(488, 258);
+			this->chip_35->Location = System::Drawing::Point(649, 316);
+			this->chip_35->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_35->Name = L"chip_35";
-			this->chip_35->Size = System::Drawing::Size(91, 79);
+			this->chip_35->Size = System::Drawing::Size(121, 96);
 			this->chip_35->TabIndex = 26;
 			this->chip_35->UseVisualStyleBackColor = true;
 			// 
@@ -446,9 +420,10 @@ namespace connectfour {
 			// 
 			this->chip_34->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_34->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_34.Image")));
-			this->chip_34->Location = System::Drawing::Point(391, 258);
+			this->chip_34->Location = System::Drawing::Point(520, 316);
+			this->chip_34->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_34->Name = L"chip_34";
-			this->chip_34->Size = System::Drawing::Size(91, 79);
+			this->chip_34->Size = System::Drawing::Size(121, 96);
 			this->chip_34->TabIndex = 25;
 			this->chip_34->UseVisualStyleBackColor = true;
 			// 
@@ -456,9 +431,10 @@ namespace connectfour {
 			// 
 			this->chip_33->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_33->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_33.Image")));
-			this->chip_33->Location = System::Drawing::Point(294, 258);
+			this->chip_33->Location = System::Drawing::Point(391, 316);
+			this->chip_33->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_33->Name = L"chip_33";
-			this->chip_33->Size = System::Drawing::Size(91, 79);
+			this->chip_33->Size = System::Drawing::Size(121, 96);
 			this->chip_33->TabIndex = 24;
 			this->chip_33->UseVisualStyleBackColor = true;
 			// 
@@ -466,9 +442,10 @@ namespace connectfour {
 			// 
 			this->chip_32->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_32->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_32.Image")));
-			this->chip_32->Location = System::Drawing::Point(197, 258);
+			this->chip_32->Location = System::Drawing::Point(262, 316);
+			this->chip_32->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_32->Name = L"chip_32";
-			this->chip_32->Size = System::Drawing::Size(91, 79);
+			this->chip_32->Size = System::Drawing::Size(121, 96);
 			this->chip_32->TabIndex = 23;
 			this->chip_32->UseVisualStyleBackColor = true;
 			// 
@@ -476,9 +453,10 @@ namespace connectfour {
 			// 
 			this->chip_31->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_31->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_31.Image")));
-			this->chip_31->Location = System::Drawing::Point(100, 258);
+			this->chip_31->Location = System::Drawing::Point(133, 316);
+			this->chip_31->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_31->Name = L"chip_31";
-			this->chip_31->Size = System::Drawing::Size(91, 79);
+			this->chip_31->Size = System::Drawing::Size(121, 96);
 			this->chip_31->TabIndex = 22;
 			this->chip_31->UseVisualStyleBackColor = true;
 			// 
@@ -486,9 +464,10 @@ namespace connectfour {
 			// 
 			this->chip_30->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_30->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_30.Image")));
-			this->chip_30->Location = System::Drawing::Point(3, 258);
+			this->chip_30->Location = System::Drawing::Point(4, 316);
+			this->chip_30->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_30->Name = L"chip_30";
-			this->chip_30->Size = System::Drawing::Size(91, 79);
+			this->chip_30->Size = System::Drawing::Size(121, 96);
 			this->chip_30->TabIndex = 21;
 			this->chip_30->UseVisualStyleBackColor = true;
 			// 
@@ -496,9 +475,10 @@ namespace connectfour {
 			// 
 			this->chip_26->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_26->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_26.Image")));
-			this->chip_26->Location = System::Drawing::Point(585, 173);
+			this->chip_26->Location = System::Drawing::Point(778, 212);
+			this->chip_26->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_26->Name = L"chip_26";
-			this->chip_26->Size = System::Drawing::Size(91, 79);
+			this->chip_26->Size = System::Drawing::Size(121, 96);
 			this->chip_26->TabIndex = 20;
 			this->chip_26->UseVisualStyleBackColor = true;
 			// 
@@ -506,9 +486,10 @@ namespace connectfour {
 			// 
 			this->chip_25->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_25->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_25.Image")));
-			this->chip_25->Location = System::Drawing::Point(488, 173);
+			this->chip_25->Location = System::Drawing::Point(649, 212);
+			this->chip_25->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_25->Name = L"chip_25";
-			this->chip_25->Size = System::Drawing::Size(91, 79);
+			this->chip_25->Size = System::Drawing::Size(121, 96);
 			this->chip_25->TabIndex = 19;
 			this->chip_25->UseVisualStyleBackColor = true;
 			// 
@@ -516,9 +497,10 @@ namespace connectfour {
 			// 
 			this->chip_24->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_24->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_24.Image")));
-			this->chip_24->Location = System::Drawing::Point(391, 173);
+			this->chip_24->Location = System::Drawing::Point(520, 212);
+			this->chip_24->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_24->Name = L"chip_24";
-			this->chip_24->Size = System::Drawing::Size(91, 79);
+			this->chip_24->Size = System::Drawing::Size(121, 96);
 			this->chip_24->TabIndex = 18;
 			this->chip_24->UseVisualStyleBackColor = true;
 			// 
@@ -526,9 +508,10 @@ namespace connectfour {
 			// 
 			this->chip_23->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_23->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_23.Image")));
-			this->chip_23->Location = System::Drawing::Point(294, 173);
+			this->chip_23->Location = System::Drawing::Point(391, 212);
+			this->chip_23->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_23->Name = L"chip_23";
-			this->chip_23->Size = System::Drawing::Size(91, 79);
+			this->chip_23->Size = System::Drawing::Size(121, 96);
 			this->chip_23->TabIndex = 17;
 			this->chip_23->UseVisualStyleBackColor = true;
 			// 
@@ -536,9 +519,10 @@ namespace connectfour {
 			// 
 			this->chip_22->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_22->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_22.Image")));
-			this->chip_22->Location = System::Drawing::Point(197, 173);
+			this->chip_22->Location = System::Drawing::Point(262, 212);
+			this->chip_22->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_22->Name = L"chip_22";
-			this->chip_22->Size = System::Drawing::Size(91, 79);
+			this->chip_22->Size = System::Drawing::Size(121, 96);
 			this->chip_22->TabIndex = 16;
 			this->chip_22->UseVisualStyleBackColor = true;
 			// 
@@ -546,9 +530,10 @@ namespace connectfour {
 			// 
 			this->chip_21->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_21->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_21.Image")));
-			this->chip_21->Location = System::Drawing::Point(100, 173);
+			this->chip_21->Location = System::Drawing::Point(133, 212);
+			this->chip_21->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_21->Name = L"chip_21";
-			this->chip_21->Size = System::Drawing::Size(91, 79);
+			this->chip_21->Size = System::Drawing::Size(121, 96);
 			this->chip_21->TabIndex = 15;
 			this->chip_21->UseVisualStyleBackColor = true;
 			// 
@@ -556,9 +541,10 @@ namespace connectfour {
 			// 
 			this->chip_20->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_20->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_20.Image")));
-			this->chip_20->Location = System::Drawing::Point(3, 173);
+			this->chip_20->Location = System::Drawing::Point(4, 212);
+			this->chip_20->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_20->Name = L"chip_20";
-			this->chip_20->Size = System::Drawing::Size(91, 79);
+			this->chip_20->Size = System::Drawing::Size(121, 96);
 			this->chip_20->TabIndex = 14;
 			this->chip_20->UseVisualStyleBackColor = true;
 			// 
@@ -566,9 +552,10 @@ namespace connectfour {
 			// 
 			this->chip_16->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_16->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_16.Image")));
-			this->chip_16->Location = System::Drawing::Point(585, 88);
+			this->chip_16->Location = System::Drawing::Point(778, 108);
+			this->chip_16->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_16->Name = L"chip_16";
-			this->chip_16->Size = System::Drawing::Size(91, 79);
+			this->chip_16->Size = System::Drawing::Size(121, 96);
 			this->chip_16->TabIndex = 13;
 			this->chip_16->UseVisualStyleBackColor = true;
 			// 
@@ -576,9 +563,10 @@ namespace connectfour {
 			// 
 			this->chip_15->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_15->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_15.Image")));
-			this->chip_15->Location = System::Drawing::Point(488, 88);
+			this->chip_15->Location = System::Drawing::Point(649, 108);
+			this->chip_15->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_15->Name = L"chip_15";
-			this->chip_15->Size = System::Drawing::Size(91, 79);
+			this->chip_15->Size = System::Drawing::Size(121, 96);
 			this->chip_15->TabIndex = 12;
 			this->chip_15->UseVisualStyleBackColor = true;
 			// 
@@ -586,9 +574,10 @@ namespace connectfour {
 			// 
 			this->chip_14->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_14->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_14.Image")));
-			this->chip_14->Location = System::Drawing::Point(391, 88);
+			this->chip_14->Location = System::Drawing::Point(520, 108);
+			this->chip_14->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_14->Name = L"chip_14";
-			this->chip_14->Size = System::Drawing::Size(91, 79);
+			this->chip_14->Size = System::Drawing::Size(121, 96);
 			this->chip_14->TabIndex = 11;
 			this->chip_14->UseVisualStyleBackColor = true;
 			// 
@@ -596,9 +585,10 @@ namespace connectfour {
 			// 
 			this->chip_13->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_13->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_13.Image")));
-			this->chip_13->Location = System::Drawing::Point(294, 88);
+			this->chip_13->Location = System::Drawing::Point(391, 108);
+			this->chip_13->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_13->Name = L"chip_13";
-			this->chip_13->Size = System::Drawing::Size(91, 79);
+			this->chip_13->Size = System::Drawing::Size(121, 96);
 			this->chip_13->TabIndex = 10;
 			this->chip_13->UseVisualStyleBackColor = true;
 			// 
@@ -606,9 +596,10 @@ namespace connectfour {
 			// 
 			this->chip_12->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_12->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_12.Image")));
-			this->chip_12->Location = System::Drawing::Point(197, 88);
+			this->chip_12->Location = System::Drawing::Point(262, 108);
+			this->chip_12->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_12->Name = L"chip_12";
-			this->chip_12->Size = System::Drawing::Size(91, 79);
+			this->chip_12->Size = System::Drawing::Size(121, 96);
 			this->chip_12->TabIndex = 9;
 			this->chip_12->UseVisualStyleBackColor = true;
 			// 
@@ -616,9 +607,10 @@ namespace connectfour {
 			// 
 			this->chip_11->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_11->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_11.Image")));
-			this->chip_11->Location = System::Drawing::Point(100, 88);
+			this->chip_11->Location = System::Drawing::Point(133, 108);
+			this->chip_11->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_11->Name = L"chip_11";
-			this->chip_11->Size = System::Drawing::Size(91, 79);
+			this->chip_11->Size = System::Drawing::Size(121, 96);
 			this->chip_11->TabIndex = 8;
 			this->chip_11->UseVisualStyleBackColor = true;
 			// 
@@ -626,9 +618,10 @@ namespace connectfour {
 			// 
 			this->chip_10->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_10->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_10.Image")));
-			this->chip_10->Location = System::Drawing::Point(3, 88);
+			this->chip_10->Location = System::Drawing::Point(4, 108);
+			this->chip_10->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_10->Name = L"chip_10";
-			this->chip_10->Size = System::Drawing::Size(91, 79);
+			this->chip_10->Size = System::Drawing::Size(121, 96);
 			this->chip_10->TabIndex = 7;
 			this->chip_10->UseVisualStyleBackColor = true;
 			// 
@@ -636,9 +629,10 @@ namespace connectfour {
 			// 
 			this->chip_06->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_06->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_06.Image")));
-			this->chip_06->Location = System::Drawing::Point(585, 3);
+			this->chip_06->Location = System::Drawing::Point(778, 4);
+			this->chip_06->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_06->Name = L"chip_06";
-			this->chip_06->Size = System::Drawing::Size(91, 79);
+			this->chip_06->Size = System::Drawing::Size(121, 96);
 			this->chip_06->TabIndex = 6;
 			this->chip_06->UseVisualStyleBackColor = true;
 			// 
@@ -646,9 +640,10 @@ namespace connectfour {
 			// 
 			this->chip_05->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_05->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_05.Image")));
-			this->chip_05->Location = System::Drawing::Point(488, 3);
+			this->chip_05->Location = System::Drawing::Point(649, 4);
+			this->chip_05->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_05->Name = L"chip_05";
-			this->chip_05->Size = System::Drawing::Size(91, 79);
+			this->chip_05->Size = System::Drawing::Size(121, 96);
 			this->chip_05->TabIndex = 5;
 			this->chip_05->UseVisualStyleBackColor = true;
 			// 
@@ -656,9 +651,10 @@ namespace connectfour {
 			// 
 			this->chip_04->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_04->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_04.Image")));
-			this->chip_04->Location = System::Drawing::Point(391, 3);
+			this->chip_04->Location = System::Drawing::Point(520, 4);
+			this->chip_04->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_04->Name = L"chip_04";
-			this->chip_04->Size = System::Drawing::Size(91, 79);
+			this->chip_04->Size = System::Drawing::Size(121, 96);
 			this->chip_04->TabIndex = 4;
 			this->chip_04->UseVisualStyleBackColor = true;
 			// 
@@ -666,9 +662,10 @@ namespace connectfour {
 			// 
 			this->chip_03->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_03->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_03.Image")));
-			this->chip_03->Location = System::Drawing::Point(294, 3);
+			this->chip_03->Location = System::Drawing::Point(391, 4);
+			this->chip_03->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_03->Name = L"chip_03";
-			this->chip_03->Size = System::Drawing::Size(91, 79);
+			this->chip_03->Size = System::Drawing::Size(121, 96);
 			this->chip_03->TabIndex = 3;
 			this->chip_03->UseVisualStyleBackColor = true;
 			// 
@@ -676,9 +673,10 @@ namespace connectfour {
 			// 
 			this->chip_02->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_02->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_02.Image")));
-			this->chip_02->Location = System::Drawing::Point(197, 3);
+			this->chip_02->Location = System::Drawing::Point(262, 4);
+			this->chip_02->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_02->Name = L"chip_02";
-			this->chip_02->Size = System::Drawing::Size(91, 79);
+			this->chip_02->Size = System::Drawing::Size(121, 96);
 			this->chip_02->TabIndex = 2;
 			this->chip_02->UseVisualStyleBackColor = true;
 			// 
@@ -686,9 +684,10 @@ namespace connectfour {
 			// 
 			this->chip_01->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_01->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_01.Image")));
-			this->chip_01->Location = System::Drawing::Point(100, 3);
+			this->chip_01->Location = System::Drawing::Point(133, 4);
+			this->chip_01->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_01->Name = L"chip_01";
-			this->chip_01->Size = System::Drawing::Size(91, 79);
+			this->chip_01->Size = System::Drawing::Size(121, 96);
 			this->chip_01->TabIndex = 1;
 			this->chip_01->UseVisualStyleBackColor = true;
 			// 
@@ -696,9 +695,10 @@ namespace connectfour {
 			// 
 			this->chip_00->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->chip_00->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_00.Image")));
-			this->chip_00->Location = System::Drawing::Point(3, 3);
+			this->chip_00->Location = System::Drawing::Point(4, 4);
+			this->chip_00->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->chip_00->Name = L"chip_00";
-			this->chip_00->Size = System::Drawing::Size(91, 79);
+			this->chip_00->Size = System::Drawing::Size(121, 96);
 			this->chip_00->TabIndex = 0;
 			this->chip_00->UseVisualStyleBackColor = true;
 			// 
@@ -706,9 +706,10 @@ namespace connectfour {
 			// 
 			this->nameLabel->AutoSize = true;
 			this->nameLabel->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->nameLabel->Location = System::Drawing::Point(206, 666);
+			this->nameLabel->Location = System::Drawing::Point(275, 820);
+			this->nameLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->nameLabel->Name = L"nameLabel";
-			this->nameLabel->Size = System::Drawing::Size(284, 13);
+			this->nameLabel->Size = System::Drawing::Size(383, 17);
 			this->nameLabel->TabIndex = 1;
 			this->nameLabel->Text = L"  Created by Juan Becerra (juanbecerra@u.boisestate.edu)";
 			this->nameLabel->Click += gcnew System::EventHandler(this, &connectFourGUI::label1_Click);
@@ -716,21 +717,23 @@ namespace connectfour {
 			// gameConsole
 			// 
 			this->gameConsole->Cursor = System::Windows::Forms::Cursors::Default;
-			this->gameConsole->Location = System::Drawing::Point(15, 531);
+			this->gameConsole->Location = System::Drawing::Point(20, 654);
+			this->gameConsole->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->gameConsole->Name = L"gameConsole";
 			this->gameConsole->ReadOnly = true;
 			this->gameConsole->ScrollBars = System::Windows::Forms::RichTextBoxScrollBars::ForcedVertical;
-			this->gameConsole->Size = System::Drawing::Size(576, 132);
+			this->gameConsole->Size = System::Drawing::Size(767, 162);
 			this->gameConsole->TabIndex = 2;
-			this->gameConsole->Text = L"";
+			this->gameConsole->Text = L"Hello";
 			// 
 			// newGameButton
 			// 
 			this->newGameButton->BackColor = System::Drawing::SystemColors::MenuHighlight;
 			this->newGameButton->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->newGameButton->Location = System::Drawing::Point(597, 531);
+			this->newGameButton->Location = System::Drawing::Point(796, 654);
+			this->newGameButton->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->newGameButton->Name = L"newGameButton";
-			this->newGameButton->Size = System::Drawing::Size(91, 40);
+			this->newGameButton->Size = System::Drawing::Size(121, 49);
 			this->newGameButton->TabIndex = 3;
 			this->newGameButton->Text = L"New Game";
 			this->newGameButton->UseVisualStyleBackColor = false;
@@ -739,9 +742,10 @@ namespace connectfour {
 			// 
 			this->exitButton->BackColor = System::Drawing::SystemColors::MenuHighlight;
 			this->exitButton->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->exitButton->Location = System::Drawing::Point(597, 577);
+			this->exitButton->Location = System::Drawing::Point(796, 710);
+			this->exitButton->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->exitButton->Name = L"exitButton";
-			this->exitButton->Size = System::Drawing::Size(91, 40);
+			this->exitButton->Size = System::Drawing::Size(121, 49);
 			this->exitButton->TabIndex = 4;
 			this->exitButton->Text = L"Exit";
 			this->exitButton->UseVisualStyleBackColor = false;
@@ -750,9 +754,10 @@ namespace connectfour {
 			// 
 			this->debugCheckbox->AutoSize = true;
 			this->debugCheckbox->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->debugCheckbox->Location = System::Drawing::Point(597, 633);
+			this->debugCheckbox->Location = System::Drawing::Point(796, 779);
+			this->debugCheckbox->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->debugCheckbox->Name = L"debugCheckbox";
-			this->debugCheckbox->Size = System::Drawing::Size(88, 17);
+			this->debugCheckbox->Size = System::Drawing::Size(111, 21);
 			this->debugCheckbox->TabIndex = 5;
 			this->debugCheckbox->Text = L"Debug Mode";
 			this->debugCheckbox->UseVisualStyleBackColor = true;
@@ -760,16 +765,17 @@ namespace connectfour {
 			// 
 			// connectFourGUI
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->ClientSize = System::Drawing::Size(704, 681);
+			this->ClientSize = System::Drawing::Size(939, 838);
 			this->Controls->Add(this->debugCheckbox);
 			this->Controls->Add(this->exitButton);
 			this->Controls->Add(this->newGameButton);
 			this->Controls->Add(this->gameConsole);
 			this->Controls->Add(this->nameLabel);
 			this->Controls->Add(this->grid_table);
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->MaximizeBox = false;
 			this->MinimizeBox = false;
 			this->Name = L"connectFourGUI";
@@ -786,7 +792,7 @@ namespace connectfour {
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-}
+	private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
 };
 }
