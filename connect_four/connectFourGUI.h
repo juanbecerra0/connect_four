@@ -18,6 +18,7 @@ namespace connectfour {
 	public ref class connectFourGUI : public System::Windows::Forms::Form
 	{
 	private:
+		Board^ b = gcnew Board();
 		Image^ chip_blank = Image::FromFile("images/chip_blank.png");
 		Image^ chip_blue = Image::FromFile("images/chip_blue.png");
 		Image^ chip_orange = Image::FromFile("images/chip_orange.png");
@@ -27,6 +28,7 @@ namespace connectfour {
 		connectFourGUI(void)
 		{
 			InitializeComponent();
+			StartNewGame();
 		}
 
 		void ChangeChipImage(System::Windows::Forms::Button^ b, int c)
@@ -46,6 +48,11 @@ namespace connectfour {
 
 		void WriteToConsole(System::String^ s) {
 			this->gameConsole->AppendText(s + "\n");
+		}
+
+		void StartNewGame(void) {
+			WriteToConsole("Starting new game...");
+			// TODO
 		}
 
 	protected:
@@ -950,6 +957,7 @@ private: System::Void chip_55_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void chip_56_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void newGameButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	StartNewGame();
 }
 private: System::Void exitButton_Click(System::Object^ sender, System::EventArgs^ e) {
 	exit(0);
