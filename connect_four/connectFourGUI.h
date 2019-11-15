@@ -13,17 +13,38 @@ namespace connectfour {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Drawing::Imaging;
 
-	/// <summary>
-	/// Summary for connectFourGUI
-	/// </summary>
 	public ref class connectFourGUI : public System::Windows::Forms::Form
 	{
+	private:
+		Image^ chip_blank = Image::FromFile("images/chip_blank.png");
+		Image^ chip_blue = Image::FromFile("images/chip_blue.png");
+		Image^ chip_orange = Image::FromFile("images/chip_orange.png");
+
 	public:
 		connectFourGUI(void)
 		{
 			InitializeComponent();
-			//Board^ b = gcnew Board();
+		}
+
+		void ChangeChipImage(System::Windows::Forms::Button^ b, int c)
+		{
+			switch (c) {
+			case 0:
+				b->Image = chip_blank;;
+				break;
+			case 1:
+				b->Image = chip_blue;
+				break;
+			case 2:
+				b->Image = chip_orange;
+				break;
+			}
+		}
+
+		void WriteToConsole(System::String^ s) {
+			this->gameConsole->AppendText(s + "\n");
 		}
 
 	protected:
@@ -37,10 +58,10 @@ namespace connectfour {
 				delete components;
 			}
 		}
-	// Table for buttons
+		// Table for buttons
 	private: System::Windows::Forms::TableLayoutPanel^ grid_table;
 
-	// Row 6
+		   // Row 6
 	private: System::Windows::Forms::Button^ chip_56;
 	private: System::Windows::Forms::Button^ chip_55;
 	private: System::Windows::Forms::Button^ chip_54;
@@ -49,7 +70,7 @@ namespace connectfour {
 	private: System::Windows::Forms::Button^ chip_51;
 	private: System::Windows::Forms::Button^ chip_50;
 
-	// Row 4
+		   // Row 4
 	private: System::Windows::Forms::Button^ chip_46;
 	private: System::Windows::Forms::Button^ chip_45;
 	private: System::Windows::Forms::Button^ chip_44;
@@ -58,7 +79,7 @@ namespace connectfour {
 	private: System::Windows::Forms::Button^ chip_41;
 	private: System::Windows::Forms::Button^ chip_40;
 
-	// Row 3
+		   // Row 3
 	private: System::Windows::Forms::Button^ chip_36;
 	private: System::Windows::Forms::Button^ chip_35;
 	private: System::Windows::Forms::Button^ chip_34;
@@ -67,7 +88,7 @@ namespace connectfour {
 	private: System::Windows::Forms::Button^ chip_31;
 	private: System::Windows::Forms::Button^ chip_30;
 
-	// Row 2
+		   // Row 2
 	private: System::Windows::Forms::Button^ chip_26;
 	private: System::Windows::Forms::Button^ chip_25;
 	private: System::Windows::Forms::Button^ chip_24;
@@ -76,7 +97,7 @@ namespace connectfour {
 	private: System::Windows::Forms::Button^ chip_21;
 	private: System::Windows::Forms::Button^ chip_20;
 
-	// Row 1
+		   // Row 1
 	private: System::Windows::Forms::Button^ chip_16;
 	private: System::Windows::Forms::Button^ chip_15;
 	private: System::Windows::Forms::Button^ chip_14;
@@ -85,7 +106,7 @@ namespace connectfour {
 	private: System::Windows::Forms::Button^ chip_11;
 	private: System::Windows::Forms::Button^ chip_10;
 
-	// Row 0
+		   // Row 0
 	private: System::Windows::Forms::Button^ chip_06;
 	private: System::Windows::Forms::Button^ chip_05;
 	private: System::Windows::Forms::Button^ chip_04;
@@ -94,17 +115,13 @@ namespace connectfour {
 	private: System::Windows::Forms::Button^ chip_01;
 	private: System::Windows::Forms::Button^ chip_00;
 
-	// "Created by" label
+		   // "Created by" label
 	private: System::Windows::Forms::Label^ nameLabel;
 
-	// Console
+		   // Console
 	private: System::Windows::Forms::RichTextBox^ gameConsole;
 
-	public: void WriteToConsole(System::String^ s) {
-		this->gameConsole->AppendText(s);
-	}
-
-	// Buttons
+		   // Buttons
 	private: System::Windows::Forms::Button^ newGameButton;
 	private: System::Windows::Forms::Button^ exitButton;
 	private: System::Windows::Forms::CheckBox^ debugCheckbox;
@@ -115,7 +132,7 @@ namespace connectfour {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -244,18 +261,19 @@ namespace connectfour {
 			// chip_56
 			// 
 			this->chip_56->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_56->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_56.Image")));
+			this->chip_56->Image = chip_blank;
 			this->chip_56->Location = System::Drawing::Point(778, 524);
 			this->chip_56->Margin = System::Windows::Forms::Padding(4);
 			this->chip_56->Name = L"chip_56";
 			this->chip_56->Size = System::Drawing::Size(121, 97);
 			this->chip_56->TabIndex = 41;
 			this->chip_56->UseVisualStyleBackColor = true;
+			//this->chip_56->
 			// 
 			// chip_55
 			// 
 			this->chip_55->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_55->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_55.Image")));
+			this->chip_55->Image = chip_blank;;
 			this->chip_55->Location = System::Drawing::Point(649, 524);
 			this->chip_55->Margin = System::Windows::Forms::Padding(4);
 			this->chip_55->Name = L"chip_55";
@@ -266,7 +284,7 @@ namespace connectfour {
 			// chip_54
 			// 
 			this->chip_54->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_54->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_54.Image")));
+			this->chip_54->Image = chip_blank;
 			this->chip_54->Location = System::Drawing::Point(520, 524);
 			this->chip_54->Margin = System::Windows::Forms::Padding(4);
 			this->chip_54->Name = L"chip_54";
@@ -277,7 +295,7 @@ namespace connectfour {
 			// chip_53
 			// 
 			this->chip_53->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_53->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_53.Image")));
+			this->chip_53->Image = chip_blank;
 			this->chip_53->Location = System::Drawing::Point(391, 524);
 			this->chip_53->Margin = System::Windows::Forms::Padding(4);
 			this->chip_53->Name = L"chip_53";
@@ -288,7 +306,7 @@ namespace connectfour {
 			// chip_52
 			// 
 			this->chip_52->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_52->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_52.Image")));
+			this->chip_52->Image = chip_blank;
 			this->chip_52->Location = System::Drawing::Point(262, 524);
 			this->chip_52->Margin = System::Windows::Forms::Padding(4);
 			this->chip_52->Name = L"chip_52";
@@ -299,7 +317,7 @@ namespace connectfour {
 			// chip_51
 			// 
 			this->chip_51->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_51->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_51.Image")));
+			this->chip_51->Image = chip_blank;
 			this->chip_51->Location = System::Drawing::Point(133, 524);
 			this->chip_51->Margin = System::Windows::Forms::Padding(4);
 			this->chip_51->Name = L"chip_51";
@@ -310,7 +328,7 @@ namespace connectfour {
 			// chip_50
 			// 
 			this->chip_50->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_50->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_50.Image")));
+			this->chip_50->Image = chip_blank;
 			this->chip_50->Location = System::Drawing::Point(4, 524);
 			this->chip_50->Margin = System::Windows::Forms::Padding(4);
 			this->chip_50->Name = L"chip_50";
@@ -321,7 +339,7 @@ namespace connectfour {
 			// chip_46
 			// 
 			this->chip_46->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_46->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_46.Image")));
+			this->chip_46->Image = chip_blank;
 			this->chip_46->Location = System::Drawing::Point(778, 420);
 			this->chip_46->Margin = System::Windows::Forms::Padding(4);
 			this->chip_46->Name = L"chip_46";
@@ -332,7 +350,7 @@ namespace connectfour {
 			// chip_45
 			// 
 			this->chip_45->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_45->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_45.Image")));
+			this->chip_45->Image = chip_blank;
 			this->chip_45->Location = System::Drawing::Point(649, 420);
 			this->chip_45->Margin = System::Windows::Forms::Padding(4);
 			this->chip_45->Name = L"chip_45";
@@ -343,7 +361,7 @@ namespace connectfour {
 			// chip_44
 			// 
 			this->chip_44->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_44->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_44.Image")));
+			this->chip_44->Image = chip_blank;
 			this->chip_44->Location = System::Drawing::Point(520, 420);
 			this->chip_44->Margin = System::Windows::Forms::Padding(4);
 			this->chip_44->Name = L"chip_44";
@@ -354,7 +372,7 @@ namespace connectfour {
 			// chip_43
 			// 
 			this->chip_43->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_43->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_43.Image")));
+			this->chip_43->Image = chip_blank;
 			this->chip_43->Location = System::Drawing::Point(391, 420);
 			this->chip_43->Margin = System::Windows::Forms::Padding(4);
 			this->chip_43->Name = L"chip_43";
@@ -365,7 +383,7 @@ namespace connectfour {
 			// chip_42
 			// 
 			this->chip_42->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_42->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_42.Image")));
+			this->chip_42->Image = chip_blank;
 			this->chip_42->Location = System::Drawing::Point(262, 420);
 			this->chip_42->Margin = System::Windows::Forms::Padding(4);
 			this->chip_42->Name = L"chip_42";
@@ -376,7 +394,7 @@ namespace connectfour {
 			// chip_41
 			// 
 			this->chip_41->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_41->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_41.Image")));
+			this->chip_41->Image = chip_blank;
 			this->chip_41->Location = System::Drawing::Point(133, 420);
 			this->chip_41->Margin = System::Windows::Forms::Padding(4);
 			this->chip_41->Name = L"chip_41";
@@ -387,7 +405,7 @@ namespace connectfour {
 			// chip_40
 			// 
 			this->chip_40->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_40->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_40.Image")));
+			this->chip_40->Image = chip_blank;
 			this->chip_40->Location = System::Drawing::Point(4, 420);
 			this->chip_40->Margin = System::Windows::Forms::Padding(4);
 			this->chip_40->Name = L"chip_40";
@@ -398,7 +416,7 @@ namespace connectfour {
 			// chip_36
 			// 
 			this->chip_36->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_36->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_36.Image")));
+			this->chip_36->Image = chip_blank;
 			this->chip_36->Location = System::Drawing::Point(778, 316);
 			this->chip_36->Margin = System::Windows::Forms::Padding(4);
 			this->chip_36->Name = L"chip_36";
@@ -409,7 +427,7 @@ namespace connectfour {
 			// chip_35
 			// 
 			this->chip_35->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_35->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_35.Image")));
+			this->chip_35->Image = chip_blank;
 			this->chip_35->Location = System::Drawing::Point(649, 316);
 			this->chip_35->Margin = System::Windows::Forms::Padding(4);
 			this->chip_35->Name = L"chip_35";
@@ -420,7 +438,7 @@ namespace connectfour {
 			// chip_34
 			// 
 			this->chip_34->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_34->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_34.Image")));
+			this->chip_34->Image = chip_blank;
 			this->chip_34->Location = System::Drawing::Point(520, 316);
 			this->chip_34->Margin = System::Windows::Forms::Padding(4);
 			this->chip_34->Name = L"chip_34";
@@ -431,7 +449,7 @@ namespace connectfour {
 			// chip_33
 			// 
 			this->chip_33->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_33->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_33.Image")));
+			this->chip_33->Image = chip_blank;
 			this->chip_33->Location = System::Drawing::Point(391, 316);
 			this->chip_33->Margin = System::Windows::Forms::Padding(4);
 			this->chip_33->Name = L"chip_33";
@@ -442,7 +460,7 @@ namespace connectfour {
 			// chip_32
 			// 
 			this->chip_32->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_32->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_32.Image")));
+			this->chip_32->Image = chip_blank;
 			this->chip_32->Location = System::Drawing::Point(262, 316);
 			this->chip_32->Margin = System::Windows::Forms::Padding(4);
 			this->chip_32->Name = L"chip_32";
@@ -453,7 +471,7 @@ namespace connectfour {
 			// chip_31
 			// 
 			this->chip_31->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_31->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_31.Image")));
+			this->chip_31->Image = chip_blank;
 			this->chip_31->Location = System::Drawing::Point(133, 316);
 			this->chip_31->Margin = System::Windows::Forms::Padding(4);
 			this->chip_31->Name = L"chip_31";
@@ -464,7 +482,7 @@ namespace connectfour {
 			// chip_30
 			// 
 			this->chip_30->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_30->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_30.Image")));
+			this->chip_30->Image = chip_blank;
 			this->chip_30->Location = System::Drawing::Point(4, 316);
 			this->chip_30->Margin = System::Windows::Forms::Padding(4);
 			this->chip_30->Name = L"chip_30";
@@ -475,7 +493,7 @@ namespace connectfour {
 			// chip_26
 			// 
 			this->chip_26->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_26->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_26.Image")));
+			this->chip_26->Image = chip_blank;
 			this->chip_26->Location = System::Drawing::Point(778, 212);
 			this->chip_26->Margin = System::Windows::Forms::Padding(4);
 			this->chip_26->Name = L"chip_26";
@@ -486,7 +504,7 @@ namespace connectfour {
 			// chip_25
 			// 
 			this->chip_25->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_25->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_25.Image")));
+			this->chip_25->Image = chip_blank;
 			this->chip_25->Location = System::Drawing::Point(649, 212);
 			this->chip_25->Margin = System::Windows::Forms::Padding(4);
 			this->chip_25->Name = L"chip_25";
@@ -497,7 +515,7 @@ namespace connectfour {
 			// chip_24
 			// 
 			this->chip_24->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_24->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_24.Image")));
+			this->chip_24->Image = chip_blank;
 			this->chip_24->Location = System::Drawing::Point(520, 212);
 			this->chip_24->Margin = System::Windows::Forms::Padding(4);
 			this->chip_24->Name = L"chip_24";
@@ -508,7 +526,7 @@ namespace connectfour {
 			// chip_23
 			// 
 			this->chip_23->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_23->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_23.Image")));
+			this->chip_23->Image = chip_blank;
 			this->chip_23->Location = System::Drawing::Point(391, 212);
 			this->chip_23->Margin = System::Windows::Forms::Padding(4);
 			this->chip_23->Name = L"chip_23";
@@ -519,7 +537,7 @@ namespace connectfour {
 			// chip_22
 			// 
 			this->chip_22->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_22->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_22.Image")));
+			this->chip_22->Image = chip_blank;
 			this->chip_22->Location = System::Drawing::Point(262, 212);
 			this->chip_22->Margin = System::Windows::Forms::Padding(4);
 			this->chip_22->Name = L"chip_22";
@@ -530,7 +548,7 @@ namespace connectfour {
 			// chip_21
 			// 
 			this->chip_21->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_21->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_21.Image")));
+			this->chip_21->Image = chip_blank;
 			this->chip_21->Location = System::Drawing::Point(133, 212);
 			this->chip_21->Margin = System::Windows::Forms::Padding(4);
 			this->chip_21->Name = L"chip_21";
@@ -541,7 +559,7 @@ namespace connectfour {
 			// chip_20
 			// 
 			this->chip_20->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_20->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_20.Image")));
+			this->chip_20->Image = chip_blank;
 			this->chip_20->Location = System::Drawing::Point(4, 212);
 			this->chip_20->Margin = System::Windows::Forms::Padding(4);
 			this->chip_20->Name = L"chip_20";
@@ -552,7 +570,7 @@ namespace connectfour {
 			// chip_16
 			// 
 			this->chip_16->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_16->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_16.Image")));
+			this->chip_16->Image = chip_blank;
 			this->chip_16->Location = System::Drawing::Point(778, 108);
 			this->chip_16->Margin = System::Windows::Forms::Padding(4);
 			this->chip_16->Name = L"chip_16";
@@ -563,7 +581,7 @@ namespace connectfour {
 			// chip_15
 			// 
 			this->chip_15->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_15->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_15.Image")));
+			this->chip_15->Image = chip_blank;
 			this->chip_15->Location = System::Drawing::Point(649, 108);
 			this->chip_15->Margin = System::Windows::Forms::Padding(4);
 			this->chip_15->Name = L"chip_15";
@@ -574,7 +592,7 @@ namespace connectfour {
 			// chip_14
 			// 
 			this->chip_14->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_14->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_14.Image")));
+			this->chip_14->Image = chip_blank;
 			this->chip_14->Location = System::Drawing::Point(520, 108);
 			this->chip_14->Margin = System::Windows::Forms::Padding(4);
 			this->chip_14->Name = L"chip_14";
@@ -585,7 +603,7 @@ namespace connectfour {
 			// chip_13
 			// 
 			this->chip_13->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_13->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_13.Image")));
+			this->chip_13->Image = chip_blank;
 			this->chip_13->Location = System::Drawing::Point(391, 108);
 			this->chip_13->Margin = System::Windows::Forms::Padding(4);
 			this->chip_13->Name = L"chip_13";
@@ -596,7 +614,7 @@ namespace connectfour {
 			// chip_12
 			// 
 			this->chip_12->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_12->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_12.Image")));
+			this->chip_12->Image = chip_blank;
 			this->chip_12->Location = System::Drawing::Point(262, 108);
 			this->chip_12->Margin = System::Windows::Forms::Padding(4);
 			this->chip_12->Name = L"chip_12";
@@ -607,7 +625,7 @@ namespace connectfour {
 			// chip_11
 			// 
 			this->chip_11->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_11->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_11.Image")));
+			this->chip_11->Image = chip_blank;
 			this->chip_11->Location = System::Drawing::Point(133, 108);
 			this->chip_11->Margin = System::Windows::Forms::Padding(4);
 			this->chip_11->Name = L"chip_11";
@@ -618,7 +636,7 @@ namespace connectfour {
 			// chip_10
 			// 
 			this->chip_10->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_10->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_10.Image")));
+			this->chip_10->Image = chip_blank;
 			this->chip_10->Location = System::Drawing::Point(4, 108);
 			this->chip_10->Margin = System::Windows::Forms::Padding(4);
 			this->chip_10->Name = L"chip_10";
@@ -629,7 +647,7 @@ namespace connectfour {
 			// chip_06
 			// 
 			this->chip_06->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_06->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_06.Image")));
+			this->chip_06->Image = chip_blank;
 			this->chip_06->Location = System::Drawing::Point(778, 4);
 			this->chip_06->Margin = System::Windows::Forms::Padding(4);
 			this->chip_06->Name = L"chip_06";
@@ -640,7 +658,7 @@ namespace connectfour {
 			// chip_05
 			// 
 			this->chip_05->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_05->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_05.Image")));
+			this->chip_05->Image = chip_blank;
 			this->chip_05->Location = System::Drawing::Point(649, 4);
 			this->chip_05->Margin = System::Windows::Forms::Padding(4);
 			this->chip_05->Name = L"chip_05";
@@ -651,7 +669,7 @@ namespace connectfour {
 			// chip_04
 			// 
 			this->chip_04->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_04->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_04.Image")));
+			this->chip_04->Image = chip_blank;
 			this->chip_04->Location = System::Drawing::Point(520, 4);
 			this->chip_04->Margin = System::Windows::Forms::Padding(4);
 			this->chip_04->Name = L"chip_04";
@@ -662,7 +680,7 @@ namespace connectfour {
 			// chip_03
 			// 
 			this->chip_03->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_03->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_03.Image")));
+			this->chip_03->Image = chip_blank;
 			this->chip_03->Location = System::Drawing::Point(391, 4);
 			this->chip_03->Margin = System::Windows::Forms::Padding(4);
 			this->chip_03->Name = L"chip_03";
@@ -673,7 +691,7 @@ namespace connectfour {
 			// chip_02
 			// 
 			this->chip_02->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_02->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_02.Image")));
+			this->chip_02->Image = chip_blank;
 			this->chip_02->Location = System::Drawing::Point(262, 4);
 			this->chip_02->Margin = System::Windows::Forms::Padding(4);
 			this->chip_02->Name = L"chip_02";
@@ -684,7 +702,7 @@ namespace connectfour {
 			// chip_01
 			// 
 			this->chip_01->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_01->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_01.Image")));
+			this->chip_01->Image = chip_blank;
 			this->chip_01->Location = System::Drawing::Point(133, 4);
 			this->chip_01->Margin = System::Windows::Forms::Padding(4);
 			this->chip_01->Name = L"chip_01";
@@ -695,7 +713,7 @@ namespace connectfour {
 			// chip_00
 			// 
 			this->chip_00->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->chip_00->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chip_00.Image")));
+			this->chip_00->Image = chip_blank;
 			this->chip_00->Location = System::Drawing::Point(4, 4);
 			this->chip_00->Margin = System::Windows::Forms::Padding(4);
 			this->chip_00->Name = L"chip_00";
@@ -797,5 +815,5 @@ namespace connectfour {
 	}
 	private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
-};
+	};
 }

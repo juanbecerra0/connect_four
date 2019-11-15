@@ -1,6 +1,5 @@
 #pragma once
 
-#include "connectFourGUI.h"
 #include <iostream>
 #include <string>
 
@@ -11,6 +10,7 @@ ref class Board
 public:
 	Board(void);
 
+	System::String^ GetBoardData(void);
 	void AddPiece(int x, int y, int color);
 	void NewGame(void);
 	void ExitGame(void);

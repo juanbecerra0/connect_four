@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Images">
+      <UniqueIdentifier>{68dda49a-bdc7-441c-8caa-d78a1389e9b6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="connectFourGUI.cpp">
@@ -29,5 +32,16 @@
     <ClInclude Include="Board.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="images\chip_blank.png">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="images\chip_blue.png">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="images\chip_orange.png">
+      <Filter>Images</Filter>
+    </Image>
   </ItemGroup>
 </Project>

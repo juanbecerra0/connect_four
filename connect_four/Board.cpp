@@ -10,6 +10,18 @@ Board::Board(void)
 	InitializeGame();
 }
 
+System::String^ Board::GetBoardData(void) {
+	System::Text::StringBuilder sb;
+
+	for (int i = 0; i < 7; ++i) {
+		for (int j = 0; j < 6; j++) {
+			sb.Append(i + ", " + j + ": " + BoardMap[i][j] + "\n");
+		}
+	}
+
+	return sb.ToString();
+}
+
 void Board::AddPiece(int x, int y, int color)
 {
 	throw gcnew System::NotImplementedException();
