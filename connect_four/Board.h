@@ -9,9 +9,7 @@ ref class Board
 {
 public:
 	Board(void);
-
-	System::String^ GetBoardData(void);
-	void AddPiece(int x, int y, int c);
+	void AddPiece(int x, int c);
 	void NewGame(void);
 private:
 	void InitializeGame(void);

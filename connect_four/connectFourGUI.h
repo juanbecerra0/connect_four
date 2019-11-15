@@ -6,7 +6,6 @@
 using namespace std;
 
 namespace connectfour {
-
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;

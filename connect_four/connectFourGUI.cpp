@@ -4,6 +4,9 @@ using namespace System;
 using namespace System::Windows::Forms;
 [STAThread]
 
+/*
+Initializes the GUI
+*/
 int main(cli::array<String^>^ args) {
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
@@ -12,12 +15,22 @@ int main(cli::array<String^>^ args) {
 	return 0;
 }
 
+/*
+Constructor: Initializes components of GUI and starts a new game
+*/
 connectfour::connectFourGUI::connectFourGUI(void)
 {
 	InitializeComponent();
 	StartNewGame();
 }
 
+/*
+Changes a button's color to the specified color
+
+0 - Blank
+1 - Blue
+2 - Orange
+*/
 void connectfour::connectFourGUI::ChangeChipImage(System::Windows::Forms::Button^ b, int c)
 {
 	switch (c) {
@@ -33,17 +46,27 @@ void connectfour::connectFourGUI::ChangeChipImage(System::Windows::Forms::Button
 	}
 }
 
+/*
+Appends the specified string to the GUI's console
+*/
 void connectfour::connectFourGUI::WriteToConsole(System::String^ s)
 {
 	this->gameConsole->AppendText(s + "\n");
 }
 
+/*
+Starts a new game by resetting the board array and all buttons
+*/
 void connectfour::connectFourGUI::StartNewGame(void)
 {
 	WriteToConsole("Starting new game...");
 	board->NewGame();
+	// TODO reset buttons to blank
 }
 
+/*
+Destructor: Disposes of all GUI components
+*/
 connectfour::connectFourGUI::~connectFourGUI()
 {
 	if (components)
@@ -52,11 +75,18 @@ connectfour::connectFourGUI::~connectFourGUI()
 	}
 }
 
+
+/*
+Callback: Returns when GUI has been completely loaded
+*/
 System::Void connectfour::connectFourGUI::connectFourGUI_Load(System::Object^ sender, System::EventArgs^ e)
 {
 	return System::Void();
 }
 
+/*
+Toggles debug mode
+*/
 System::Void connectfour::connectFourGUI::checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e)
 {
 	if (this->debugCheckbox->Checked) {
@@ -66,6 +96,11 @@ System::Void connectfour::connectFourGUI::checkBox1_CheckedChanged(System::Objec
 		useDebug = false;
 	}
 }
+
+// --------------------------------------------------------------------------------------------------------
+/*
+Group: Passes x, y, and color into AddPiece methods
+*/
 
 System::Void connectfour::connectFourGUI::chip_00_Click(System::Object^ sender, System::EventArgs^ e)
 {
@@ -277,11 +312,17 @@ System::Void connectfour::connectFourGUI::chip_56_Click(System::Object^ sender, 
 	return System::Void();
 }
 
+/*
+Starts a new game
+*/
 System::Void connectfour::connectFourGUI::newGameButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	StartNewGame();
 }
 
+/*
+Closes program
+*/
 System::Void connectfour::connectFourGUI::exitButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	exit(0);
