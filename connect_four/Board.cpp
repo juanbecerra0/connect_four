@@ -22,19 +22,14 @@ System::String^ Board::GetBoardData(void) {
 	return sb.ToString();
 }
 
-void Board::AddPiece(int x, int y, int color)
+void Board::AddPiece(int x, int y, int c)
 {
 	throw gcnew System::NotImplementedException();
 }
 
 void Board::NewGame(void)
 {
-	throw gcnew System::NotImplementedException();
-}
-
-void Board::ExitGame(void)
-{
-	throw gcnew System::NotImplementedException();
+	InitializeGame();
 }
 
 void Board::InitializeGame(void)
@@ -42,7 +37,6 @@ void Board::InitializeGame(void)
 	for (int i = 0; i < 7; ++i) {
 		for (int j = 0; j < 6; j++) {
 			BoardMap[i][j] = 0;
-			// TODO change button characteristics
 		}
 	}
 }
@@ -50,4 +44,9 @@ void Board::InitializeGame(void)
 bool Board::IsInRange(int x, int y)
 {
 	return (x >= 0) && (x < X_DIM) && (y >= 0) && (y < Y_DIM);
+}
+
+bool Board::IsWin(int x, int y, int c)
+{
+	return false;
 }

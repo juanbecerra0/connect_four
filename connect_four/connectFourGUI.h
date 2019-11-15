@@ -17,130 +17,90 @@ namespace connectfour {
 
 	public ref class connectFourGUI : public System::Windows::Forms::Form
 	{
+	public:
+		connectfour::connectFourGUI::connectFourGUI(void);
+		void ChangeChipImage(System::Windows::Forms::Button^ b, int c);
+		void WriteToConsole(System::String^ s);
+		void StartNewGame(void);
 	private:
-		Board^ b = gcnew Board();
+		Board^ board = gcnew Board();
 		Image^ chip_blank = Image::FromFile("images/chip_blank.png");
 		Image^ chip_blue = Image::FromFile("images/chip_blue.png");
 		Image^ chip_orange = Image::FromFile("images/chip_orange.png");
 		bool useDebug = false;
-
-	public:
-		connectFourGUI(void)
-		{
-			InitializeComponent();
-			StartNewGame();
-		}
-
-		void ChangeChipImage(System::Windows::Forms::Button^ b, int c)
-		{
-			switch (c) {
-			case 0:
-				b->Image = chip_blank;;
-				break;
-			case 1:
-				b->Image = chip_blue;
-				break;
-			case 2:
-				b->Image = chip_orange;
-				break;
-			}
-		}
-
-		void WriteToConsole(System::String^ s) {
-			this->gameConsole->AppendText(s + "\n");
-		}
-
-		void StartNewGame(void) {
-			WriteToConsole("Starting new game...");
-			// TODO
-		}
-
 	protected:
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		~connectFourGUI()
-		{
-			if (components)
-			{
-				delete components;
-			}
-		}
-		// Table for buttons
-	private: System::Windows::Forms::TableLayoutPanel^ grid_table;
-
-		   // Row 6
-	private: System::Windows::Forms::Button^ chip_56;
-	private: System::Windows::Forms::Button^ chip_55;
-	private: System::Windows::Forms::Button^ chip_54;
-	private: System::Windows::Forms::Button^ chip_53;
-	private: System::Windows::Forms::Button^ chip_52;
-	private: System::Windows::Forms::Button^ chip_51;
-	private: System::Windows::Forms::Button^ chip_50;
-
-		   // Row 4
-	private: System::Windows::Forms::Button^ chip_46;
-	private: System::Windows::Forms::Button^ chip_45;
-	private: System::Windows::Forms::Button^ chip_44;
-	private: System::Windows::Forms::Button^ chip_43;
-	private: System::Windows::Forms::Button^ chip_42;
-	private: System::Windows::Forms::Button^ chip_41;
-	private: System::Windows::Forms::Button^ chip_40;
-
-		   // Row 3
-	private: System::Windows::Forms::Button^ chip_36;
-	private: System::Windows::Forms::Button^ chip_35;
-	private: System::Windows::Forms::Button^ chip_34;
-	private: System::Windows::Forms::Button^ chip_33;
-	private: System::Windows::Forms::Button^ chip_32;
-	private: System::Windows::Forms::Button^ chip_31;
-	private: System::Windows::Forms::Button^ chip_30;
-
-		   // Row 2
-	private: System::Windows::Forms::Button^ chip_26;
-	private: System::Windows::Forms::Button^ chip_25;
-	private: System::Windows::Forms::Button^ chip_24;
-	private: System::Windows::Forms::Button^ chip_23;
-	private: System::Windows::Forms::Button^ chip_22;
-	private: System::Windows::Forms::Button^ chip_21;
-	private: System::Windows::Forms::Button^ chip_20;
-
-		   // Row 1
-	private: System::Windows::Forms::Button^ chip_16;
-	private: System::Windows::Forms::Button^ chip_15;
-	private: System::Windows::Forms::Button^ chip_14;
-	private: System::Windows::Forms::Button^ chip_13;
-	private: System::Windows::Forms::Button^ chip_12;
-	private: System::Windows::Forms::Button^ chip_11;
-	private: System::Windows::Forms::Button^ chip_10;
-
-		   // Row 0
-	private: System::Windows::Forms::Button^ chip_06;
-	private: System::Windows::Forms::Button^ chip_05;
-	private: System::Windows::Forms::Button^ chip_04;
-	private: System::Windows::Forms::Button^ chip_03;
-	private: System::Windows::Forms::Button^ chip_02;
-	private: System::Windows::Forms::Button^ chip_01;
-	private: System::Windows::Forms::Button^ chip_00;
-
-		   // "Created by" label
-	private: System::Windows::Forms::Label^ nameLabel;
-
-		   // Console
-	private: System::Windows::Forms::RichTextBox^ gameConsole;
-
-		   // Buttons
-	private: System::Windows::Forms::Button^ newGameButton;
-	private: System::Windows::Forms::Button^ exitButton;
-	private: System::Windows::Forms::CheckBox^ debugCheckbox;
-
-	protected:
-
+		~connectFourGUI();
 	private:
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
+		// Table for buttons
+		System::Windows::Forms::TableLayoutPanel^ grid_table;
+
+		// Grid Container
 		System::ComponentModel::Container^ components;
+
+		// Row 6
+		System::Windows::Forms::Button^ chip_56;
+		System::Windows::Forms::Button^ chip_55;
+		System::Windows::Forms::Button^ chip_54;
+		System::Windows::Forms::Button^ chip_53;
+		System::Windows::Forms::Button^ chip_52;
+		System::Windows::Forms::Button^ chip_51;
+		System::Windows::Forms::Button^ chip_50;
+
+		// Row 4
+		System::Windows::Forms::Button^ chip_46;
+		System::Windows::Forms::Button^ chip_45;
+		System::Windows::Forms::Button^ chip_44;
+		System::Windows::Forms::Button^ chip_43;
+		System::Windows::Forms::Button^ chip_42;
+		System::Windows::Forms::Button^ chip_41;
+		System::Windows::Forms::Button^ chip_40;
+
+		// Row 3
+		System::Windows::Forms::Button^ chip_36;
+		System::Windows::Forms::Button^ chip_35;
+		System::Windows::Forms::Button^ chip_34;
+		System::Windows::Forms::Button^ chip_33;
+		System::Windows::Forms::Button^ chip_32;
+		System::Windows::Forms::Button^ chip_31;
+		System::Windows::Forms::Button^ chip_30;
+
+		// Row 2
+		System::Windows::Forms::Button^ chip_26;
+		System::Windows::Forms::Button^ chip_25;
+		System::Windows::Forms::Button^ chip_24;
+		System::Windows::Forms::Button^ chip_23;
+		System::Windows::Forms::Button^ chip_22;
+		System::Windows::Forms::Button^ chip_21;
+		System::Windows::Forms::Button^ chip_20;
+
+		// Row 1
+		System::Windows::Forms::Button^ chip_16;
+		System::Windows::Forms::Button^ chip_15;
+		System::Windows::Forms::Button^ chip_14;
+		System::Windows::Forms::Button^ chip_13;
+		System::Windows::Forms::Button^ chip_12;
+		System::Windows::Forms::Button^ chip_11;
+		System::Windows::Forms::Button^ chip_10;
+
+		// Row 0
+		System::Windows::Forms::Button^ chip_06;
+		System::Windows::Forms::Button^ chip_05;
+		System::Windows::Forms::Button^ chip_04;
+		System::Windows::Forms::Button^ chip_03;
+		System::Windows::Forms::Button^ chip_02;
+		System::Windows::Forms::Button^ chip_01;
+		System::Windows::Forms::Button^ chip_00;
+
+		// "Created by" label
+		System::Windows::Forms::Label^ nameLabel;
+
+		// Console
+		System::Windows::Forms::RichTextBox^ gameConsole;
+
+		// Buttons
+		System::Windows::Forms::Button^ newGameButton;
+		System::Windows::Forms::Button^ exitButton;
+		System::Windows::Forms::CheckBox^ debugCheckbox;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -779,7 +739,6 @@ namespace connectfour {
 			this->nameLabel->Size = System::Drawing::Size(383, 17);
 			this->nameLabel->TabIndex = 1;
 			this->nameLabel->Text = L"  Created by Juan Becerra (juanbecerra@u.boisestate.edu)";
-			this->nameLabel->Click += gcnew System::EventHandler(this, &connectFourGUI::label1_Click);
 			// 
 			// gameConsole
 			// 
@@ -859,108 +818,55 @@ namespace connectfour {
 
 		}
 #pragma endregion
-	private: System::Void connectFourGUI_Load(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-		if (this->debugCheckbox->Checked) {
-			useDebug = true;
-		}
-		else {
-			useDebug = false;
-		}
-	}
-	private: System::Void chip_00_Click(System::Object^ sender, System::EventArgs^ e) {
-		WriteToConsole("It works!");
-	}
-private: System::Void chip_01_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_02_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_03_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_04_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_05_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_06_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_10_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_11_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_12_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_13_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_14_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_15_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_16_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_20_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_21_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_22_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_23_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_24_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_25_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_26_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_30_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_31_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_32_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_33_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_34_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_35_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_36_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_40_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_41_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_42_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_43_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_44_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_45_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_46_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_50_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_51_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_52_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_53_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_54_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_55_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void chip_56_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void newGameButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	StartNewGame();
-}
-private: System::Void exitButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	exit(0);
-}
+	private:
+		// Action listeners
+		System::Void connectFourGUI_Load(System::Object^ sender, System::EventArgs^ e);
+		System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+
+		System::Void chip_00_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_01_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_02_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_03_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_04_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_05_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_06_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_10_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_11_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_12_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_13_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_14_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_15_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_16_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_20_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_21_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_22_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_23_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_24_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_25_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_26_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_30_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_31_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_32_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_33_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_34_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_35_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_36_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_40_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_41_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_42_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_43_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_44_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_45_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_46_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_50_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_51_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_52_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_53_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_54_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_55_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void chip_56_Click(System::Object^ sender, System::EventArgs^ e);
+
+		System::Void newGameButton_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void exitButton_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }
