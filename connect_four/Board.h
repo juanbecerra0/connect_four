@@ -2,6 +2,7 @@
 
 #include "connectFourGUI.h"
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -15,5 +16,6 @@ public:
 	void ExitGame(void);
 private:
 	void InitializeGame(void);
+	bool IsInRange(int x, int y);
 };
 

@@ -1,15 +1,13 @@
 #include "Board.h"
 
-int BoardMap[7][6];
+const int X_DIM = 7;
+const int Y_DIM = 6;
+
+int BoardMap[X_DIM][Y_DIM];
 
 Board::Board(void)
 {
 	InitializeGame();
-	for (int i = 0; i < 7; ++i) {
-		for (int j = 0; j < 6; j++) {
-			cout << BoardMap[i][j];
-		}
-	}
 }
 
 void Board::AddPiece(int x, int y, int color)
@@ -32,6 +30,12 @@ void Board::InitializeGame(void)
 	for (int i = 0; i < 7; ++i) {
 		for (int j = 0; j < 6; j++) {
 			BoardMap[i][j] = 0;
+			// TODO change button characteristics
 		}
 	}
+}
+
+bool Board::IsInRange(int x, int y)
+{
+	return (x >= 0) && (x < X_DIM) && (y >= 0) && (y < Y_DIM);
 }
