@@ -3,6 +3,7 @@
 #include "Board.h"
 #include <string>
 #include <array>
+#include <vector>
 using namespace std;
 
 namespace connectfour {
@@ -20,12 +21,19 @@ namespace connectfour {
 		connectfour::connectFourGUI::connectFourGUI(void);
 		void ChangeChipImage(System::Windows::Forms::Button^ b, int c);
 		void WriteToConsole(System::String^ s);
+		void ToggleWinGameState(void);
 		void StartNewGame(void);
+		void FlipChip(void);
+		void ToggleButtonEnabled(int x, int y);
+		void ButtonPress(int x, int y);
+
 	private:
 		Board^ board = gcnew Board();
+		cli::array<System::Windows::Forms::Button^, 2>^ buttonArray;
 		Image^ chip_blank = Image::FromFile("images/chip_blank.png");
 		Image^ chip_blue = Image::FromFile("images/chip_blue.png");
 		Image^ chip_orange = Image::FromFile("images/chip_orange.png");
+		int flipChipValue = 2;	// Initially orange, and immediately switched to blue
 		bool useDebug = false;
 	protected:
 		~connectFourGUI();
@@ -151,6 +159,19 @@ namespace connectfour {
 			this->chip_02 = (gcnew System::Windows::Forms::Button());
 			this->chip_01 = (gcnew System::Windows::Forms::Button());
 			this->chip_00 = (gcnew System::Windows::Forms::Button());
+
+			// Fill in the array of buttons
+			buttonArray = gcnew cli::array<System::Windows::Forms::Button^, 2>{
+				{ chip_00, chip_01, chip_02, chip_03, chip_04, chip_05, chip_06 },
+				{ chip_10, chip_11, chip_12, chip_13, chip_14, chip_15, chip_16 },
+				{ chip_20, chip_21, chip_22, chip_23, chip_24, chip_25, chip_26 },
+				{ chip_30, chip_31, chip_32, chip_33, chip_34, chip_35, chip_36 },
+				{ chip_40, chip_41, chip_42, chip_43, chip_44, chip_45, chip_46 },
+				{ chip_50, chip_51, chip_52, chip_53, chip_54, chip_55, chip_56 }
+			};
+
+			buttonArray[0, 0] = chip_00;
+
 			this->nameLabel = (gcnew System::Windows::Forms::Label());
 			this->gameConsole = (gcnew System::Windows::Forms::RichTextBox());
 			this->newGameButton = (gcnew System::Windows::Forms::Button());

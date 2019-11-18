@@ -9,7 +9,7 @@ ref class Board
 {
 public:
 	Board(void);
-	void AddPiece(int x, int c);
+	std::pair<std::pair<int, int>, bool> AddPiece(int x, int y, int c);
 	void NewGame(void);
 private:
 	void InitializeGame(void);
