@@ -1,2 +1,2 @@
 # connect_four
-Quick C++/DirectX game project
+Quick C++ GUI-game project
